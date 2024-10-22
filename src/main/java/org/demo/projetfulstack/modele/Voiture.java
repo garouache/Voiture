@@ -7,7 +7,6 @@ import lombok.*;
 @Entity
 @Data
 @RequiredArgsConstructor
-
 @Setter
 @Getter
 @NoArgsConstructor
@@ -29,14 +28,18 @@ public class Voiture {
     @NonNull
     private int prix;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "proprietaire_id")
-    @JsonIgnore
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "proprietaire_id", nullable = false)
+
     private Proprietaire proprietaire;
 
-    public Voiture(String toyota, String corolla, String grise, String s, int i, int i1, Proprietaire p1) {
-
-
-
+    public Voiture(String marque, String modele, String couleur, String immatricule, int annee, int prix, Proprietaire proprietaire) {
+        this.marque = marque;
+        this.modele = modele;
+        this.couleur = couleur;
+        this.immatricule = immatricule;
+        this.annee = annee;
+        this.prix = prix;
+        this.proprietaire = proprietaire;
     }
 }

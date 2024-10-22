@@ -1,21 +1,27 @@
 import React from "react";
-import { Navbar, Nav } from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import "./Assets/Css/NavigationBar.css";
+import Logo from "./Assets/logolocationvoiture.png";
 
 function NavigationBar() {
   return (
-    <Navbar bg="dark" variant="dark">
-      <Link to="/" className="navbar-brand">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/1/17/Tata_Tamo_Racemo.jpg"
-          width="25"
-          height="25"
-          alt="logo"
-        />
+    <Navbar className="darkk">
+      <Link to="/" className="navbar-brand logonav">
+        <img src={Logo} width="50" height="50" alt="logo" className="logonav" />
       </Link>
-      <Nav className="mr-auto">
+      <Nav className="mr-auto itemnav">
+        <Link to="/" className="nav-link">
+          Home
+        </Link>
+        <Link to="/addprop" className="nav-link">
+          Ajouter Proprietaire
+        </Link>
         <Link to="/add" className="nav-link">
           Ajouter Voiture
+        </Link>
+        <Link to="/listprop" className="nav-link">
+          Liste Proprietaires
         </Link>
         <Link to="/list" className="nav-link">
           Liste Voitures

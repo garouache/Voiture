@@ -1,12 +1,13 @@
 import React from "react";
-import { Navbar, Container, Col } from "react-bootstrap";
+import { Col, Container, Navbar } from "react-bootstrap";
+import "./Assets/Css/Footer.css";
 
 function Footer() {
   let fullYear = new Date().getFullYear();
   return (
-    <Navbar fixed="bottom" bg="dark" variant="dark">
-      <Container>
-        <Col lg={12} className="text-center text-muted">
+    <Navbar className="footer">
+      <Container className=" text-center text-muted ">
+        <Col lg={12} className="textfooter">
           <div>
             {fullYear} - {fullYear + 1}, All Rights Reserved by Master MIOLA
           </div>

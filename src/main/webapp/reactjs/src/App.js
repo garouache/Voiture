@@ -6,6 +6,10 @@ import Footer from "./Components/Footer";
 import NavigationBar from "./Components/NavigationBar";
 import Voiture from "./Components/Voiture";
 import VoitureListe from "./Components/VoitureListe";
+import Proprietere from "./Components/Proprietere";
+import ProprietereListe from "./Components/ProprietereListe";
+import EditVoiture from "./Components/EditVoiture";
+import EditProprietaire from "./Components/EditProprietaire";
 
 function App() {
   return (
@@ -15,7 +19,10 @@ function App() {
         <Route path="/" element={<Bienvenue />} />
         <Route path="/add" element={<Voiture />} />
         <Route path="/list" element={<VoitureListe />} />
-        <Route path="/edit/:id" element={<Voiture />} />
+        <Route path="/addprop" element={<Proprietere />} />
+        <Route path="/listprop" element={<ProprietereListe />} />
+        <Route path="/editvoiture/:id" element={<EditVoiture />} />
+        <Route path="/editproprietaire/:id" element={<EditProprietaire />} />
       </Routes>
       <Footer />
     </Router>
