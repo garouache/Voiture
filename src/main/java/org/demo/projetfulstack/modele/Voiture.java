@@ -42,4 +42,10 @@ public class Voiture {
         this.prix = prix;
         this.proprietaire = proprietaire;
     }
+
+    public Voiture(String miolaCar, String uber, String blanche, String s, int i) {
+    }
+
+    public Voiture(String miniCooper, String uber, String rouge, String immatricule, int annee, int prix, int i) {
+    }
 }

@@ -9,7 +9,7 @@ function Footer() {
       <Container className=" text-center text-muted ">
         <Col lg={12} className="textfooter">
           <div>
-            {fullYear} - {fullYear + 1}, All Rights Reserved by Master MIOLA
+            {fullYear} - {fullYear + 1}, All Rights Reserved by me
           </div>
         </Col>
       </Container>

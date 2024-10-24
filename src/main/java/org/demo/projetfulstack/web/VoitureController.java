@@ -44,6 +44,16 @@ public class VoitureController {
 
         return ResponseEntity.ok("Voiture added successfully.");
     }
+    @GetMapping("/{id}")
+    public ResponseEntity<Voiture> getVoitureById(@PathVariable Long id) {
+        Optional<Voiture> voiture = voitureRepo.findById(id);
+
+        if (voiture.isPresent()) {
+            return ResponseEntity.ok(voiture.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 
 
     @PutMapping("/{id}")
@@ -56,13 +66,8 @@ public class VoitureController {
         return ResponseEntity.ok(updatedVoiture);
     }
 
-    // Delete a Voiture by ID
     @DeleteMapping("{id}")
-    public ResponseEntity<String> deleteVoiture(@PathVariable Long id) {
-        if (!voitureRepo.existsById(id)) {
-            return ResponseEntity.badRequest().body("Voiture not found.");
-        }
+    public void deleteVoiture(@PathVariable Long id) {
         voitureRepo.deleteById(id);
-        return ResponseEntity.ok("Voiture deleted successfully.");
     }
 }

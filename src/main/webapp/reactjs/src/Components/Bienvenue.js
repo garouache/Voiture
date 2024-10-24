@@ -12,19 +12,11 @@ function Bienvenue() {
             <blockquote className="blockquote mb-0">
               <p>Le meilleur de nos voitures est exposé près de chez vous.</p>
               <footer className="blockquote-footer textfooter">
-                ANASS EL HABTI
+                GAROUACHE ILIYAS
               </footer>
             </blockquote>
           </div>
-          <div class="div2bienvenue">
-            <img
-              src={Logo}
-              width="350"
-              height="350"
-              alt="logo"
-              className="logobienvenue"
-            />
-          </div>
+
         </div>
       </Card.Body>
     </Card>
