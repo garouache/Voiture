@@ -8,13 +8,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh './mvnw clean install' // Utilise cette commande si Maven Wrapper est configuré dans ton projet
+                sh './mvn clean install' // Utilise cette commande si Maven Wrapper est configuré dans ton projet
             }
         }
         stage('SonarQube Analysis') {
             steps {
                 echo 'Running SonarQube Analysis...'
-                sh "./mvnw sonar:sonar -Dsonar.projectKey=my-project -Dsonar.host.url=${SONARQUBE_URL} -Dsonar.login=${SONAR_TOKEN}"
+                sh "./mvn sonar:sonar -Dsonar.projectKey=my-project -Dsonar.host.url=${SONARQUBE_URL} -Dsonar.login=${SONAR_TOKEN}"
             }
         }
         stage('Docker Build') {
